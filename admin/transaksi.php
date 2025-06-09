@@ -626,9 +626,12 @@ a:hover {
   <section class="page-keranjang">
     <div class="container">
 
-    <div class="breadcrumb">
       <!-- Tombol download -->
-      <button id="downloadBtn" style="margin-top: 20px;">Download PDF</button>
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <button id="downloadBtn"><i class="fa fa-download"></i>Download PDF</button>
+      </div>
+
+    <div class="breadcrumb">
         <div class="card-body">
           <div class="table-responsive">
           <table class="table" id="tables">
@@ -641,6 +644,7 @@ a:hover {
                       <th>Jumlah</th>
                       <th>Subtotal</th>
                       <th>Total</th>
+                      <th>Bukti Bayar</th>
                   </tr>
               </thead>
               <tbody>
@@ -655,10 +659,11 @@ a:hover {
                         dp.nama_produk,
                         dp.jumlah,
                         dp.subtotal,
-                        p.total_harga AS total
+                        p.total_harga AS total, 
+                        p.bukti_bayar
                     FROM pesanan p
                     JOIN detail_pesanan dp ON p.id_pesanan = dp.id_pesanan
-                    ORDER BY p.tanggal_pesan DESC
+                    ORDER BY p.id_pesanan ASC
                 ");
                 while ($row = mysqli_fetch_assoc($query)) {
                     $grand_totalpendapatan += $row['subtotal'];
@@ -671,6 +676,9 @@ a:hover {
                         <td><?php echo $row['jumlah']; ?></td>
                         <td>Rp<?php echo number_format($row['subtotal'], 0, ',', '.'); ?></td>
                         <td>Rp<?php echo number_format($row['total'], 0, ',', '.'); ?></td>
+                        <td>
+                          <img src="../img/foto_bukti/<?php echo $row['bukti_bayar']; ?>">
+                        </td>
                     </tr>
                 <?php } ?>
             <tr>

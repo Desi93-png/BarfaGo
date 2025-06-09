@@ -61,7 +61,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 7%;
-    /* background-color: rgba(199, 233, 245, 0.8); */
+    background-color: #cdf0f7;
     border-bottom: 0.5px solid #2a709e;
     position: fixed;
     top: 0;
@@ -241,6 +241,21 @@
     border-radius: 10px; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
+
+  .table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed; /* Supaya kolom terbagi rata */
+}
+
+table th, table td {
+  word-wrap: break-word;
+  font-size: 0.85rem; /* Kecilkan font kalau perlu */
+}
 
   .table-responsive {
   width: 100%;
@@ -521,23 +536,15 @@
     <div class="navbar-nav">
       <a href="home.php">Beranda</a>
       <a href="history.php" style="color: #08C2FF;">History</a>
-      <!-- <a href="#menu">Kupon</a> -->
+
       <a href="about.php">About Us</a>
       <a href="logout.php" style="color: red;">Logout</a>
     </div>
 
     <div class="navbar-extra">
-      <!-- <a href="#" id="search-button"><i data-feather="search"></i></a> -->
       <a href="keranjang.php" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
-
-    <!-- Search Form start -->
-    <div class="search-form">
-      <input type="search" id="search-box" placeholder="search here...">
-      <label for="search-box"><i data-feather="search"></i></label>
-    </div>
-    <!-- Search Form end -->
 
   </nav>
   <!-- Navbar end -->
@@ -554,44 +561,54 @@
 
     <div class="breadcrumb">
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table" id="tables" >
+          <div class="table-container">
+            <div class="table-responsive">
+              <table class="table" id="tables" >
                 <thead style="text-align: left;">
-
-                    <tr>
-                        <th>No.</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>No. HP</th>
-                        <th>Detail Alamat</th>
-                        <th>Link Alamat</th>
-                        <th>Invoice Pesanan</th>
+                  
+                  <tr>
+                    <th style="width: 55px;">No.</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th style="width: 150px;">No. HP</th>
+                    <th style="width: 250px;">Detail Alamat</th>
+                    <th>Link Alamat</th>
+                    <th>Status Bayar</th>
+                    <th>Status Kirim</th>
+                    <!-- <th>Bukti Bayar</th> -->
+                    <th>Invoice Pesanan</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php
+                  <?php
                     $query = mysqli_query($connect, "SELECT * FROM pesanan");  // Untuk melakukan query
                     $no = 1;
                     while ($data = mysqli_fetch_array($query)) {
-                ?>
+                      ?>
                         <tr>
-                            <td> <?php echo $no++; ?>. </td>
-                            <td> <?php echo $data['nama']?></td>
+                          <td style="width: 55px;"><?php echo $no++; ?>.</td>
+                          <td> <?php echo $data['nama']?></td>
                             <td> <?php echo $data['email']; ?> </td>
-                            <td> <?php echo $data['no_hp']?> </td>
-                            <td> <?php echo $data['alamat']?> </td>
-                            <td><a href="<?php echo $data['link']; ?>">
-                                <?php echo $data['link']; ?></a>
+                            <td style="width: 150px;"> <?php echo $data['no_hp']?> </td>
+                            <td style="width: 250px;"> <?php echo $data['alamat']?> </td>
+                            <td>
+                              <a href="<?php echo $data['link']; ?>" target="_blank">Lihat Lokasi</a>
+                            </td>
+                            <td> <?php echo $data['status_bayar']?> </td>
+                            <td> <?php echo $data['status_kirim']?> </td>
+                            <!-- <td>
+                              <a href="bukti.php?id=<?php echo $data['id_pesanan']; ?>" class="btn-detail">Bukti</a> -->
                             </td>
                             <td>
-                                <a href="invoice.php?id=<?php echo $data['id_pesanan']; ?>" class="btn-detail">Invoice</a>
+                              <a href="invoice.php?id=<?php echo $data['id_pesanan']; ?>" class="btn-detail">Invoice</a>
                             </td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-          </div>
-        </div>
+                          </tr>
+                          <?php } ?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+            </div>
     </div>
 
   </div>

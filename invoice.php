@@ -48,6 +48,22 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
+    table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-left: 0; /* Rata kiri */
+    }
+
+    table th,
+    table td {
+      padding: 8px 12px; /* Tambah jarak dalam sel */
+      text-align: left;   /* Rata kiri teks */
+    }
+
+    table th {
+      font-weight: bold;
+    }
+
     h1, h3 {
       text-align: center;
       color: #444;
@@ -69,8 +85,18 @@
     }
 
     .total-section {
-      text-align: right;
-      margin-top: 30px;
+    margin-top: 30px;
+    }
+
+    .total-section table {
+      margin-left: auto; /* Ini yang bikin tabel geser ke kanan */
+      border-collapse: collapse;
+    }
+
+    .total-section th,
+    .total-section td {
+      padding: 8px 12px;
+      text-align: left;
     }
 
     .btn-download {
@@ -103,31 +129,106 @@
   <!-- Invoice Content -->
   <div class="invoice-box" id="invoice-content">
     <h1>Invoice</h1>
+    <hr style="border: 1px solid #ccc; margin: 1rem 0; margin-bottom: 3rem;">
     <h3>Detail Pesanan</h3>
 
-    <div class="detail-row"><strong>Nama Lengkap:</strong> <?php echo $data['nama']; ?></div>
-    <div class="detail-row"><strong>Email:</strong> <?php echo $data['email']; ?></div>
-    <div class="detail-row"><strong>No HP:</strong> <?php echo $data['no_hp']; ?></div>
-    <div class="detail-row"><strong>Alamat:</strong> <?php echo $data['alamat']; ?></div>
-    <div class="detail-row"><strong>Link Maps:</strong> <?php echo $data['link']; ?></div>
-    <div class="detail-row"><strong>Tanggal Pesanan:</strong> <?php echo $data['tanggal_pesan']; ?></div>
-
+    <table>
+      <tr>
+        <th>Nama Lengkap</th>
+        <td>:</td>
+        <td><?php echo $data['nama']; ?></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>:</td>
+        <td><?php echo $data['email']; ?></td>
+      </tr>
+      <tr>
+        <th>No. HP</th>
+        <td>:</td>
+        <td><?php echo $data['no_hp']; ?></td>
+      </tr>
+      <tr>
+        <th>Alamat</th>
+        <td>:</td>
+        <td><?php echo $data['alamat']; ?></td>
+      </tr>
+      <tr>
+        <th>Link Maps</th>
+        <td>:</td>
+        <td><?php echo $data['link']; ?></td>
+      </tr>
+      <tr>
+        <th>Tanggal Pesan</th>
+        <td>:</td>
+        <td><?php echo $data['tanggal_pesan']; ?></td>
+      </tr>
+      <tr>
+        <th>Metode Pembayaran</th>
+        <td>:</td>
+        <td><?php echo $data['metode_bayar']; ?></td>
+      </tr>
+      <tr>
+        <th>Status Bayar</th>
+        <td>:</td>
+        <td><?php echo $data['status_bayar']; ?></td>
+      </tr>
+      <tr>
+        <th>Status Kirim</th>
+        <td>:</td>
+        <td><?php echo $data['status_kirim']; ?></td>
+      </tr>
+    </table>
     <hr>
 
-    <h3>Produk yang Dipesan:</h3>
+    <h3>Produk yang Dipesan</h3>
     <?php while ($show = mysqli_fetch_array($kueri)) { ?>
-      <div class="detail-row"><strong>Nama Produk:</strong> <?php echo $show['nama_produk']; ?></div>
-      <div class="detail-row"><strong>Harga Satuan:</strong> Rp<?php echo number_format($show['harga_satuan'], 0, ',', '.'); ?></div>
-      <div class="detail-row"><strong>Jumlah:</strong> <?php echo $show['jumlah']; ?></div>
-      <div class="detail-row"><strong>Subtotal:</strong> Rp<?php echo number_format($show['subtotal']); ?></div>
+
+      <table>
+        <tr>
+          <th>Nama Produk</th>
+          <td>:</td>
+          <td><?php echo $show['nama_produk']; ?></td>
+        </tr>
+        <tr>
+          <th>Harga Satuan</th>
+          <td>:</td>
+          <td>Rp<?php echo number_format($show['harga_satuan'], 0, ',', '.'); ?></td>
+        </tr>
+        <tr>
+          <th>Jumlah</th>
+          <td>:</td>
+          <td><?php echo $show['jumlah']; ?></td>
+        </tr>
+        <tr>
+          <th>Subtotal</th>
+          <td>:</td>
+          <td>Rp<?php echo number_format($show['subtotal'], 0, ',', '.'); ?></td>
+        </tr>
+      </table>
+      
       <hr>
     <?php } ?>
 
     <div class="total-section">
-      <p><strong>Total: Rp<?php echo number_format($data['total_harga'], 0, ',', '.'); ?></strong></p>
-      <p><strong>Ongkir: Rp<?php echo number_format(2000, 0, ',', '.'); ?></strong></p>
-      <?php $grandtotal = $data['total_harga'] + 2000; ?>
-      <p><strong>Grand Total: Rp<?php echo number_format($grandtotal, 0, ',', '.'); ?></strong></p>
+      <table>
+        <tr>
+          <th>Total</th>
+          <th>:</th>
+          <th>Rp<?php echo number_format($data['total_harga'], 0, ',', '.'); ?></th>
+        </tr>
+        <tr>
+          <th>Ongkir</th>
+          <th>:</th>
+          <th>Rp<?php echo number_format(2000, 0, ',', '.'); ?></th>
+        </tr>
+        <?php $grandtotal = $data['total_harga'] + 2000; ?>
+        <tr>
+          <th>Grand Total</th>
+          <th>:</th>
+          <th>Rp<?php echo number_format($grandtotal, 0, ',', '.'); ?></th>
+        </tr>
+      </table>
     </div>
   </div>
 

@@ -44,7 +44,6 @@
     <div class="navbar-nav">
       <a href="home.php">Beranda</a>
       <a href="history.php">History</a>
-      <a href="#menu">Kupon</a>
       <a href="about.php">About Us</a>
       <a href="logout.php" style="color: red;">Logout</a>
     </div>

@@ -54,13 +54,6 @@
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
 
-    <!-- Search Form start -->
-    <!-- <div class="search-form">
-      <input type="text" name="keyword" size="40" autofocus autocomplete="off" placeholder="Cari...">
-      <label for="search-box" name="cari"><i data-feather="search"></i></label>
-    </div> -->
-    <!-- Search Form end -->
-
   </nav>
   <!-- Navbar end -->
 

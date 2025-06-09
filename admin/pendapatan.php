@@ -649,9 +649,12 @@ a:hover {
   <section class="page-keranjang">
     <div class="container">
 
-    <div class="breadcrumb">
       <!-- Tombol download -->
-      <button id="downloadBtn" style="margin-top: 20px;">Download PDF</button>
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <button id="downloadBtn">Download PDF</button>
+      </div>
+
+      <div class="breadcrumb">
         <div class="card-body">
           <div class="table-responsive">
           <table class="table" id="tables">
