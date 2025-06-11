@@ -682,7 +682,7 @@ a:hover {
                     </tr>
                 <?php } ?>
             <tr>
-</tr>
+          </tr>
 
               </tbody>
           </table>
@@ -703,18 +703,23 @@ a:hover {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF();
 
-    html2canvas(document.querySelector(".page-keranjang")).then(canvas => {
+    // Ambil elemen breadcrumb, bukan page-keranjang
+    html2canvas(document.querySelector(".breadcrumb")).then(canvas => {
       const imgData = canvas.toDataURL("image/png");
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      // Tambahkan margin (misal 10 satuan)
+      const margin = 10;
+      const usableWidth = pdfWidth - 2 * margin;
+      const pdfHeight = (imgProps.height * usableWidth) / imgProps.width;
+
+      // Tambahkan gambar ke PDF dengan margin
+      pdf.addImage(imgData, "PNG", margin, 10, usableWidth, pdfHeight);
       pdf.save("laporan-transaksi.pdf");
     });
   });
 </script>
-
 
   <!-- Feather Icons -->
   <script>

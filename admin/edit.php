@@ -91,8 +91,8 @@
                     <label for="deskripsi">Deskripsi</label><br>
                     <textarea name="deskripsi"><?php echo $data['deskripsi'] ?></textarea><br><br>
 
-                    <label for="stok">Stok</label><br>
-                    <input type="text" id="stok" name="stok" value= "<?php echo $data['stok'] ?>"><br><br>
+                    <!-- <label for="stok">Stok</label><br>
+                    <input type="text" id="stok" name="stok" value= "<?php echo $data['stok'] ?>"><br><br> -->
 
                     <input type="submit" value="Kirim">
                 </form>

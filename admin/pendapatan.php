@@ -744,19 +744,26 @@ a:hover {
 
 <script>
   document.getElementById('downloadBtn').addEventListener('click', () => {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
 
-    html2canvas(document.querySelector(".page-keranjang")).then(canvas => {
-      const imgData = canvas.toDataURL("image/png");
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+  html2canvas(document.querySelector(".breadcrumb")).then(canvas => {
+    const imgData = canvas.toDataURL("image/png");
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    
+    // Margin horizontal (misal 10 px)
+    const margin = 10;
 
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save("laporan-pendapatan.pdf");
-    });
+    // Hitung lebar & tinggi gambar yang disesuaikan dengan margin
+    const usableWidth = pdfWidth - 2 * margin;
+    const pdfHeight = (imgProps.height * usableWidth) / imgProps.width;
+
+    // Tambahkan gambar dengan margin
+    pdf.addImage(imgData, "PNG", margin, 10, usableWidth, pdfHeight);
+    pdf.save("laporan-pendapatan.pdf");
   });
+});
 </script>
 
 

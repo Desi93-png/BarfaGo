@@ -12,7 +12,7 @@ include "../koneksi.php";
     if($cek > 0){
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
-        header("location:home.php");
+        header("location:produk.php");
     } else {
         header("location:login.php?pesan=gagal");
     }

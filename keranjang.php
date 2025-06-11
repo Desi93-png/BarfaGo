@@ -112,6 +112,7 @@
                 } else {
             ?>
 
+        <div class="tabel-wrapper">
             <table class="table" id="tables" >
                 <thead style="text-align: left;">
                     <tr>
@@ -170,6 +171,7 @@
                         </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <div class="card-header">

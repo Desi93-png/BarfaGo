@@ -66,7 +66,7 @@
             </tr>
             <tr>
               <th style="padding-top: 1.5rem; text-align: left">Total</th>
-              <th style="padding-top: 1.5rem; padding-left:2rem">Rp<?php echo number_format($total_harga + $ongkir, 0, ',', '.'); ?></th>
+              <th style="padding-top: 1.5rem; padding-left:0.4rem">Rp<?php echo number_format($total_harga + $ongkir, 0, ',', '.'); ?></th>
             </tr>
           </table>
         </div>
@@ -93,12 +93,13 @@
 
               <p>Pilih Metode Pembayaran:</p>
               <label><input type="radio" name="metode_bayar" value="Cash"> Bayar di Tempat (Cash)</label><br>
-              <label><input type="radio" name="metode_bayar" value="E-Money"> E-Money</label><br><br>
+              <label><input type="radio" name="metode_bayar" value="e-money"> E-Money</label><br><br>
               
-              <div id="bukti-bayar-container" style="display: none;">
-                <label for="bukti_bayar">Bukti Pembayaran</label><br>
-                <input type="file" id="bukti_bayar" name="bukti_bayar"><br><br>
-              </div>
+              <p>Jika memilih metode pembayaran E-Money, maka lakukan pembayaran pada QRIS berikut:</p>
+              <img src="img/qris.png" alt="QRIS" style="max-width: 200px;"><br><br>
+
+              <label for="bukti_bayar">Upload Bukti Pembayaran:</label><br>
+              <input type="file" id="bukti_bayar" name="bukti_bayar"><br><br>
 
               <input type="submit" value="Kirim"> 
             </form>
@@ -107,26 +108,6 @@
       </div>
     </div>
   </section>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const radioButtons = document.getElementsByName('metode_bayar');
-    const buktiBayarContainer = document.getElementById('bukti-bayar-container');
-    const buktiBayarInput = document.getElementById('bukti_bayar');
-
-    radioButtons.forEach(function (radio) {
-      radio.addEventListener('change', function () {
-        if (this.value === 'e-money') {
-          buktiBayarContainer.style.display = 'block';
-          buktiBayarInput.setAttribute('required', 'required');
-        } else {
-          buktiBayarContainer.style.display = 'none';
-          buktiBayarInput.removeAttribute('required');
-        }
-      });
-    });
-  });
-  </script>
 
   <script>
     feather.replace()

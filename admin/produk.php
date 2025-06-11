@@ -744,13 +744,17 @@ a:hover {
             <td>1.</td>
             <td>Anda dapat mengubah detail produk, termasuk nama produk, foto, harga, dan deskripsi jika terjadi perubahan yang relevan</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>2.</td>
             <td>Anda dapat memperbarui stok produk</td>
+          </tr> -->
+          <tr>
+            <td>2.</td>
+            <td>Anda dapat melihat laporan pendapatan</td>
           </tr>
           <tr>
             <td>3.</td>
-            <td>Anda dapat melihat laporan penjualan</td>
+            <td>Anda dapat melihat laporan transaksi</td>
           </tr>
         </table>
       </div>
@@ -784,7 +788,7 @@ a:hover {
                         <th>Foto</th>
                         <th>Harga</th>
                         <th>Deskripsi</th>
-                        <th>Stok</th>
+                        <!-- <th>Stok</th> -->
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -802,9 +806,9 @@ a:hover {
                             <td><img src="../img/products/<?php echo $data['gambar']?>" alt="Product Image" width="80"></td>
                             <td>Rp<?php echo number_format($data['harga'], 0, ',', '.'); ?></td>
                             <td><?php echo $data['deskripsi']?></td>
-                            <td>
+                            <!-- <td>
                                 <?php echo $stok . " " . $peringatan; ?>
-                            </td>
+                            </td> -->
                             <td>
                                 <span class="action-wrapper">
                                     <a href="edit.php?id_produk=<?php echo $data['id_produk'];?>" class="btn-edit">

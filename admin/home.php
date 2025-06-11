@@ -98,7 +98,11 @@
           </tr>
           <tr>
             <td>3.</td>
-            <td>Anda dapat melihat laporan penjualan</td>
+            <td>Anda dapat melihat laporan pendapatan</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Anda dapat melihat laporan transaksi</td>
           </tr>
         </table>
       </div>

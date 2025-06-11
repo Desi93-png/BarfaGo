@@ -178,25 +178,34 @@ body {
   padding: 1.4rem 7%;
 }
 
-.breadcrumb{
+.breadcrumb {
   padding: 15px 30px;
   margin-bottom: 20px;
   background-color: #003964;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
-  margin-right: 80px;
-  margin-left: 80px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.breadcrumb-a{
+.breadcrumb-a { 
   padding: 15px 30px;
   margin-bottom: 20px;
   background-color: #003964;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
-  margin-right: 80px;
-  margin-left: 80px;
-  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 400px; /* atau 500px, sesuai kebutuhan */
+  box-sizing: border-box;
+}
+
+.judul{
+  text-align: center;
 }
 
 .judul h2{
@@ -216,6 +225,25 @@ body {
 
 .card-body{
   color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.card-body table {
+  width: 100%;
+  table-layout: fixed; /* Membatasi lebar kolom */
+}
+
+.card-body td,
+.card-body th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 1rem;
+  vertical-align: top;
 }
   
 .btn-hapus {
@@ -288,7 +316,8 @@ input[type="submit"] {
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  width: 10%;
+  width: auto;
+  min-width: 120px; /* atau sesuai kebutuhan */
   margin-bottom: 1rem;
 }
 

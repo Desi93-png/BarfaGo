@@ -79,7 +79,7 @@
       </div>
       <div class="content">
         <h3>Kenapa memilih galon kami?</h3>
-        <p>Kami menyediakan air isi ulang berkualitas tinggi dari sumber terpercaya, disaring dengan teknologi modern untuk memastikan kesegaran dan kebersihan setiap tetesnya.</p>
+        <p>Kami menyediakan air berkualitas tinggi dari sumber terpercaya, disaring dengan teknologi modern untuk memastikan kesegaran dan kebersihan setiap tetesnya.</p>
         <p>Dapatkan 1 kupon di setiap pembelian galon. Kumpulkan 10 kupon dan nikmati 1 kali isi ulang gratis. Semakin sering beli, makin cepat dapat bonus!</p>
       </div>
     </div>
@@ -144,7 +144,7 @@
         <h3 id="modal-title"></h3>
         <p id="modal-desc" class="mb-5"></p>
         <div class="product-price stok-text" style="font-size: 20px;">
-          Stok: <span id="modal-stok"></span>
+          <!-- Stok: <span id="modal-stok"></span> -->
         </div>
         <?php
           $perintah = mysqli_query($connect, "SELECT * FROM product");
@@ -181,7 +181,7 @@
             document.getElementById('modal-img').src = `img/products/${data.gambar}`;
             document.getElementById('modal-title').innerText = data.nama_produk;
             document.getElementById('modal-desc').innerText = data.deskripsi;
-            document.getElementById('modal-stok').innerText = data.stok;
+            // document.getElementById('modal-stok').innerText = data.stok;
 
             modal.style.display = 'flex';
           });

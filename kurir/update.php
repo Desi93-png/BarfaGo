@@ -124,13 +124,13 @@
                 <label>Status Bayar</label>
                 <div class="radio-group">
                     <label>
-                        <input type="radio" name="status_bayar" value="Belum Dibayar" 
-                            <?php if ($data['status_bayar'] == 'Belum Dibayar') echo 'checked'; ?>>
+                        <input type="radio" name="status_bayar" value="Belum dibayar" 
+                            <?php if ($data['status_bayar'] == 'Belum dibayar') echo 'checked'; ?>>
                         Belum Dibayar
                     </label>
                     <label>
-                        <input type="radio" name="status_bayar" value="Sudah Dibayar" 
-                            <?php if ($data['status_bayar'] == 'Sudah Dibayar') echo 'checked'; ?>>
+                        <input type="radio" name="status_bayar" value="Sudah dibayar" 
+                            <?php if ($data['status_bayar'] == 'Sudah dibayar') echo 'checked'; ?>>
                         Sudah Dibayar
                     </label>
                 </div>

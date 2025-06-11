@@ -225,12 +225,6 @@
         });
         </script>
 
-
-
-      <!-- <div class="remember-forgot">
-        <label><input type="checkbox">Remember Me</label>
-        <a href="#">Forgot Password</a>
-      </div> -->
       <button type="submit" class="btn">Login</button>
       <div class="register-link">
         <p>Dont have an account? <a href="register.php">Register</a></p>

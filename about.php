@@ -51,7 +51,7 @@
 
     <div class="navbar-extra">
       <!-- <a href="#" id="search-button"><i data-feather="search"></i></a> -->
-      <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+      <a href="keranjang.php" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
 
@@ -153,7 +153,7 @@
         </button>
         <div class="pannel">
           <p>
-            Cara ordernya sangat mudah. Setelah register dan login, pilih produk yang akan dibeli dan masukkan ke dalam keranjang. Setelah itu, klik ikon keranjang dan checkout. Bayar sesuai e-banking atau e-money yang dimiliki menggunakan kode QR yang tersedia.
+            Cara ordernya sangat mudah. Setelah register dan login, pilih produk yang akan dibeli dan masukkan ke dalam keranjang. Setelah itu, klik ikon keranjang dan checkout. Bayar cash atau E-Money menggunakan QRIS.
           </p>
         </div>
       </div>

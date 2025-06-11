@@ -220,8 +220,15 @@
     color: #fff;
   }
 
+.tabel-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
   .table {
     width: 100%;
+    min-width: 600px;
+  border-collapse: collapse;
     border-collapse: separate; /* penting: biar border-radius bisa jalan */
     border-spacing: 0;
     overflow: hidden;
