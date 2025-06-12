@@ -115,95 +115,6 @@
     color: var(--primary);
   }
   
-  #hamburger-menu {
-    display: none;
-  }
-  
-  /* Navbar search form */
-  .navbar .search-form {
-    position: absolute;
-    top: 100%;
-    right: 7%;
-    background-color: #00589A;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 0.3s;
-  }
-  
-  .navbar .search-form.active {
-    transform: scaleY(1);
-  }
-  
-  .navbar .search-form input {
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color: var(--bg);
-    padding: 1rem;
-  }
-  
-  .navbar .search-form label {
-    cursor: pointer;
-    font-size: 2rem;
-    margin-right: 1.5rem;
-    color: var(--bg);
-  }
-  
-  /* Shopping Cart */
-  .shopping-cart {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    height: 100vh;
-    width: 35rem;
-    padding: 0 1.5rem;
-    background-color: #00589A;
-    color: var(--bg);
-    transition: 0.3s;
-  }
-  
-  .shopping-cart.active {
-    right: 0;
-  }
-  
-  .shopping-cart .cart-item {
-    margin: 2rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed #666;
-    position: relative;
-  }
-  
-  .shopping-cart img {
-    height: 6rem;
-    border-radius: 50%;
-  }
-  
-  .shopping-cart h3 {
-    font-size: 1.6rem;
-    padding-bottom: 0.5rem;
-  }
-  
-  .shopping-cart .item-price {
-    font-size: 1.2rem;
-  }
-  
-  .shopping-cart .remove-item {
-    position: absolute;
-    right: 1rem;
-    cursor: pointer;
-  }
-  
-  .shopping-cart .remove-item:hover {
-    color: var(--primary);
-  }
-  
   .page-keranjang{
     margin: 2rem 0;
     margin-top: 10rem;
@@ -306,6 +217,7 @@ table th, table td {
     justify-content: left;
     gap: 10px;
   }
+
   .jumlah-produk i{
     padding-bottom: 3rem;
   }
@@ -422,104 +334,8 @@ table th, table td {
       font-size: 75%;
     }
   }
-  
-  /* Tablet */
-  @media (max-width: 758px) {
-    html {
-      font-size: 62.5%;
-    }
-  
-    #hamburger-menu {
-      display: inline-block;
-    }
-  
-    .navbar .navbar-nav {
-      position: absolute;
-      top: 100%;
-      right: -100%;
-      background-color: #fff;
-      width: 30rem;
-      height: 100vh;
-      transition: 0.3s;
-    }
-  
-    .navbar .navbar-nav.active {
-      right: 0;
-    }
-  
-    .navbar .navbar-nav a {
-      color: var(--bg);
-      display: block;
-      margin: 1.5rem;
-      padding: 0.5rem;
-      font-size: 2rem;
-    }
-  
-    .navbar .navbar-nav a::after {
-      transform-origin: 0 0;
-    }
-  
-    .navbar .navbar-nav a:hover::after {
-      transform: scaleX(0.2);
-    }
-  
-    .navbar .search-form {
-      width: 90%;
-      right: 2rem;
-    }
-  
-    .about .row {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 50%;
-    }
-  
-    .about .row .about-img img {
-      height: 24rem;
-      object-fit: cover;
-      object-position: center;
-    }
-  
-    .about .row .content {
-      padding: 0;
-    }
-  
-    .about .row .content h3 {
-      margin-top: 1rem;
-      font-size: 2rem;
-    }
-  
-    .about .row .content p {
-      font-size: 1.6rem;
-    }
-  
-    .menu p {
-      font-size: 1.2rem;
-    }
-  
-    .contact .row {
-      flex-wrap: wrap;
-    }
-  
-    .contact .row .map {
-      height: 30rem;
-    }
-  
-    .contact .row form {
-      padding-top: 0;
-    }
-  
-    .modal-content {
-      flex-wrap: wrap;
-    }
-  }
-  
-  /* Mobile Phone */
-  @media (max-width: 450px) {
-    html {
-      font-size: 55%;
-    }
-  }
+
+
   </style>
 
 </head>
@@ -543,7 +359,6 @@ table th, table td {
 
     <div class="navbar-extra">
       <a href="keranjang.php" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
-      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
 
   </nav>

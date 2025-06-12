@@ -641,8 +641,8 @@ a:hover {
   <section class="page-keranjang">
     <div class="container">
 
-    <h4 style="color: #000;">Daftar pesanan yang sedang dalam perjalanan ke pelanggan</h4>
-    <p style="color: #000; margin-bottom: 1rem;">Pastikan pengiriman berjalan lancar dan tepat waktu</p>
+    <h4 style="color: #003964;">Daftar pesanan yang sedang dalam perjalanan ke pelanggan</h4>
+    <p style="color: #003964; margin-bottom: 1rem;">Pastikan pengiriman berjalan lancar dan tepat waktu</p>
 
       <div class="breadcrumb">
         <div class="card-body">

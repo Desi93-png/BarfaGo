@@ -28,7 +28,211 @@
   <script src="https://unpkg.com/feather-icons"></script>
 
   <!-- My Style -->
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --primary: #39BEF9;
+      --bg: #cdf0f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 7%;
+      background-color: rgba(199, 233, 245, 0.8);
+      border-bottom: 0.5px solid #2a709e;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    .navbar .navbar-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      font-style: italic;
+    }
+
+    .navbar .navbar-logo span {
+      color: var(--primary);
+    }
+
+    .navbar .navbar-nav a {
+      color: #00589A;
+      display: inline-block;
+      font-size: 1.3rem;
+      font-weight: 510;
+      margin: 0 1rem;
+    }
+
+    .navbar .navbar-nav a:hover {
+      color: var(--primary);
+    }
+
+    .navbar .navbar-nav a::after {
+      content: '';
+      display: block;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.1rem solid var(--primary);
+      transform: scaleX(0);
+      transition: 0.2s linear;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+      transform: scaleX(0.5);
+    }
+
+    .navbar .navbar-extra a {
+      color: #00589A;
+      margin: 0 0.5rem;
+    }
+
+    .navbar .navbar-extra a:hover {
+      color: var(--primary);
+    }
+
+    .products{
+      padding: 8rem 7% 1.4rem;
+    }
+
+    /* Products Section */
+    .products .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .products .product-card {
+      text-align: center;
+      border: 1px solid #00589A;
+      padding: 2rem;
+      background-color: #90e0ef;
+      width: 50;
+    }
+
+    .products .product-konfir {
+      text-align: center;
+      border: 1px solid #90e0ef;
+      padding: 2rem;
+      background-color: #003964;
+      width: 50;
+      color: #fff;
+      border-radius: 20px;
+      margin-top: 3rem;
+    }
+
+    .products .product-history {
+      display: block; /* atau inline-block jika kamu pakai <a> atau <button> */
+      margin: 0 auto; /* ini yang bikin tombol ke tengah */
+      text-align: center;
+      border: 1px solid #90e0ef;
+      padding: 0.8rem;
+      background-color: #003964;
+      width: 10%;
+      color: #fff; /* warna tulisan putih */
+      border-radius: 20px;
+      text-decoration: none; /* jika pakai <a> agar underline hilang */
+      margin-top: 1rem;
+    }
+
+    .products .product-history a{
+      color: #0096c7;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+    }
+
+    .products .product-icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .products .product-icons a {
+      width: 4rem;
+      height: 4rem;
+      color: #0096c7;
+      margin: 0.3rem;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .products .product-icons a:hover {
+      background-color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .products .product-image {
+      padding: 1rem 0;
+    }
+
+    .products .product-image img {
+      height: 25rem;
+    }
+
+    .products .product-content h3 {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: var(--primary);
+
+    }
+
+    .products .product-stars {
+      font-size: 1.7rem;
+      padding: 0.8rem;
+      color: var(--primary);
+    }
+
+    .products .product-stars .star-full {
+      fill: var(--primary);
+    }
+
+    .products .product-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .products .product-price span {
+      text-decoration: line-through;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    /* Media Queries */
+    /* Laptop */
+    @media (max-width: 1366px) {
+      html {
+        font-size: 75%;
+      }
+    }
+  </style>
 
 </head>
 
@@ -49,17 +253,8 @@
     </div>
 
     <div class="navbar-extra">
-      <!-- <a href="#" id="search-button"><i data-feather="search"></i></a> -->
       <a href="keranjang.php"><i data-feather="shopping-cart"></i></a>
-      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
-
-    <!-- Search Form start -->
-    <div class="search-form">
-      <input type="search" id="search-box" placeholder="search here...">
-      <label for="search-box"><i data-feather="search"></i></label>
-    </div>
-    <!-- Search Form end -->
 
   </nav>
   <!-- Navbar end -->
