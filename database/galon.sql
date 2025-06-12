@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2025 pada 16.21
+-- Waktu pembuatan: 12 Jun 2025 pada 19.10
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -63,14 +63,9 @@ CREATE TABLE `detail_pesanan` (
 --
 
 INSERT INTO `detail_pesanan` (`id_detail`, `id_pesanan`, `id_produk`, `nama_produk`, `harga_satuan`, `jumlah`, `subtotal`) VALUES
-(27, 26, 2, 'Aqua 19L', 21000, 1, 21000),
-(28, 27, 1, 'Le Minerale 15L', 22000, 1, 22000),
-(29, 28, 1, 'Le Minerale 15L', 22000, 1, 22000),
-(30, 29, 1, 'Le Minerale 15L', 22000, 1, 22000),
 (31, 30, 1, 'Le Minerale 15L', 22000, 1, 22000),
-(32, 30, 2, 'Aqua 19L', 21000, 1, 21000),
-(33, 31, 1, 'Le Minerale 15L', 23000, 1, 23000),
-(34, 32, 1, 'Le Minerale 15L', 23000, 1, 23000);
+(42, 36, 2, 'Aqua 19L', 21000, 1, 21000),
+(43, 36, 4, 'Galon Kosong', 36000, 1, 36000);
 
 -- --------------------------------------------------------
 
@@ -123,7 +118,9 @@ INSERT INTO `pelanggan` (`id`, `username`, `password`, `nama`, `email`, `no_hp`,
 (10, 'andi', 'andi05', 'Muhammad Nur Wahyandi', 'andi.com', '081', 'Desa Kemiri'),
 (11, 'coco12', 'coco1290', 'Coco Melon', 'coco@gmail.com', '081967278923', 'Desa Coco Melon'),
 (12, 'melon23', 'melon1234', 'Coco Melonn', 'melon@gmai.com', '081345234892', 'Desa Coco Melon RT 1 RW 2'),
-(13, 'randguy', '1234', 'Random Guy', 'randguy@gmail.com', '081', 'bumi');
+(13, 'randguy', '1234', 'Random Guy', 'randguy@gmail.com', '081', 'bumi'),
+(14, 'randguy2', '12345', 'random guyyyyy', 'randguyyy@gmail.com', '081929', 'bumiii'),
+(15, 'randdude', '1234', 'random dude', 'randdude@gmailcom', '081898', 'galaksi bima sakti');
 
 -- --------------------------------------------------------
 
@@ -152,13 +149,8 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `username`, `nama`, `email`, `no_hp`, `alamat`, `link`, `status_bayar`, `status_kirim`, `total_harga`, `tanggal_pesan`, `metode_bayar`, `bukti_bayar`) VALUES
-(26, 'kikoeskrim', 'Desi Pangestuti', 'melon@gmail.com', '081967278923', 'RT.02, RW.02 Tuntungpait, Kutoarjo, 54212', 'https://maps.app.goo.gl/v2bxifFEGneLAVfB6', 'Sudah Dibayar', 'Selesai', 23000, '2025-05-01', 'e-money', '20250501195637IMG_20230504_102344.jpg'),
-(27, 'kikoeskrim', 'Desi Pangestuti', 'melon@gmail.com', '081967278923', 'RT.02, RW.02 Tuntungpait, Kutoarjo, 54212', 'link', 'Sudah Dibayar', 'Selesai', 24000, '2025-05-01', 'cash', ''),
-(28, 'kikoeskrim', 'Desi Pangestuti', 'sss@gmail.com', '081226062407', 'RT.02, RW.02 Tuntungpait, Kutoarjo, 54212', 'https://maps.app.goo.gl/v2bxifFEGneLAVfB6', 'Sudah Dibayar', 'Selesai', 24000, '2025-05-01', 'cash', ''),
-(29, 'kikoeskrim', 'vgchbg', 'yogurt@gmail.com', '081967278923', 'RT.02, RW.02 Tuntungpait, Kutoarjo, 54212', 'https://maps.app.goo.gl/v2bxifFEGneLAVfB6', 'Sudah Dibayar', 'Selesai', 24000, '2025-05-01', 'cash', ''),
-(30, 'randguy', 'Random Guy', 'randguy@gmail.com', '081', 'bumi', 'https://maps.app.goo.gl/W625bFBkKdUB3MCT8', 'Sudah Dibayar', 'Selesai', 45000, '2025-06-11', 'e-money', '20250611144006Marc Márquez on his Ducati Desmosedici GP25; 2025.jpeg'),
-(31, 'randguy', 'Random Guy', 'randguy@gmail.com', '081', 'bumi', 'https://maps.app.goo.gl/v2bxifFEGneLAVfB6', 'Sudah dibayar', 'Selesai', 25000, '2025-06-11', 'e-money', '20250611153745Mayonnaise Risoles with Smoked Beef and Egg.jpeg'),
-(32, 'pinoesserut', 'Desi Pangestuti', 'melon@gmail.com', '082', 'RT.02, RW.02 Tuntungpait, Kutoarjo, 54212', 'https://maps.app.goo.gl/W625bFBkKdUB3MCT8', 'Sudah dibayar', 'Selesai', 25000, '2025-06-11', 'Cash', '');
+(30, 'randguy', 'Random Guy', 'randguy@gmail.com', '081', 'bumi', 'https://maps.app.goo.gl/W625bFBkKdUB3MCT8', 'Sudah dibayar', 'Selesai', 45000, '2025-06-11', 'e-money', '20250611144006Marc Márquez on his Ducati Desmosedici GP25; 2025.jpeg'),
+(36, 'randdude', 'Random Dude', 'randdude@gmailcom', '081898', 'Galaksi Bima Sakti - Bumi', 'https://maps.app.goo.gl/W625bFBkKdUB3MCT8', 'Sudah dibayar', 'Diproses', 59000, '2025-06-12', 'e-money', '20250612190926idxkC64uff_1746776550863.jpeg');
 
 -- --------------------------------------------------------
 
@@ -180,9 +172,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_produk`, `nama_produk`, `harga`, `stok`, `gambar`, `deskripsi`) VALUES
-(1, 'Le Minerale 15L', 23000, 0, 'LeMinerale.png', 'Produk ini dijual bersama galonnya (bukan isi ulang).'),
+(1, 'Le Minerale 15L', 22000, 0, 'LeMinerale.png', 'Produk ini dijual bersama galonnya (bukan isi ulang).'),
 (2, 'Aqua 19L', 21000, 80, 'Aqua.png', 'Produk ini hanya berisi air, tidak termasuk galon. Jika belum memiliki galon AQUA, silakan pilih produk dengan galon kosong.'),
-(3, 'Air Isi Ulang', 6000, 95, 'IsiUlang.png', 'Anda harus sudah memiliki galon sendiri untuk membeli produk ini. Harga hanya untuk airnya saja.\r\n'),
+(3, 'Air Isi Ulang', 6000, 0, 'IsiUlang.png', 'Anda harus sudah memiliki galon sendiri untuk membeli produk ini. Harga hanya untuk airnya saja.\r\n'),
 (4, 'Galon Kosong', 36000, 0, 'GalonKosong.png', 'Kapasitas 19L. Harga hanya untuk galon saja, tidak termasuk isi air.');
 
 --
@@ -240,7 +232,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT untuk tabel `kurir`
@@ -252,13 +244,13 @@ ALTER TABLE `kurir`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `product`
